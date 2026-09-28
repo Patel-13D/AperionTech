@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Brand Primary: Authority, Trust & Architecture */
+    --brand-navy: #19357B;
+    --brand-navy-dark: #0D1C44;
+    --brand-navy-light: #244AA8;
+    
+    /* Brand Secondary: Enterprise Innovation */
+    --brand-purple: #8F55C1;
+    --brand-purple-soft: #F5EEFC;
+    --brand-purple-border: #E0C8F5;
+
+    /* Brand Accent: Technology & Cloud Links */
+    --brand-cyan: #5DBBE8;
+    --brand-cyan-soft: #EEF8FD;
+
+    /* Enterprise Neutrals (Avoid harsh pure black or stark cold gray) */
+    --surface-base: #F8FAFC;       /* Warm subtle off-white canvas */
+    --surface-card: #FFFFFF;       /* Crisp white card surface */
+    --border-subtle: #E2E8F0;      /* Fine architectural separator */
+    --text-heading: #0F172A;       /* Deep slate heading */
+    --text-body: #475569;          /* Professional muted slate body */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--surface-base);
+    color: var(--text-body);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
