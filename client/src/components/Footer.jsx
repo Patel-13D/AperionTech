@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
 import { Mail, Phone, MapPin, MonitorPlay, FileText, UserCheck } from 'lucide-react';
 
 export default function Footer() {
@@ -97,7 +98,6 @@ export default function Footer() {
               <li><a href="#services" className="hover:text-[#19357B] hover:translate-x-0.5 inline-block transition-transform">Integration & API Development</a></li>
               <li><a href="#services" className="hover:text-[#19357B] hover:translate-x-0.5 inline-block transition-transform">Autonomous Data Warehousing</a></li>
               <li><a href="#services" className="hover:text-[#19357B] hover:translate-x-0.5 inline-block transition-transform">Bespoke APEX & VBCS Apps</a></li>
-              <li><a href="#services" className="hover:text-[#19357B] hover:translate-x-0.5 inline-block transition-transform">Agentic AI & Invoice Automation</a></li>
             </ul>
           </div>
 
@@ -141,7 +141,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-[#19357B] shrink-0 mt-0.5">
                   <MapPin size={15} />
                 </div>
-                <span>487, SUTARWAD, TALAVCHORA, Chikhli (Navsari), Chikhli, Navsari- 396521, Gujarat</span>
+                <span>487, Sutarwad, Talavchora, Chikhli (Navsari)- 396521, Gujarat</span>
               </li>
             </ul>
           </div>

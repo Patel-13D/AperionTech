@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AperionLogo from './AperionLogo';
+import SiteBackground from './SiteBackground';
 import { 
   ChevronDown, 
   ChevronRight, 
@@ -28,17 +29,12 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Agar user top par hai (15px ke andar), hamesha navbar show rakhein
       if (currentScrollY < 15) {
         setIsVisible(true);
-      } 
-      // Niche scroll karne par navbar hide karein aur open dropdown close karein
-      else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setIsVisible(false);
         setActiveDropdown(null);
-      } 
-      // Upar scroll karne par navbar wapas show karein
-      else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
 
@@ -146,33 +142,20 @@ export default function Navbar() {
           ]
         }
       ]
-    },
-    {
-      id: 'compliance',
-      name: 'Cybersecurity & Compliance',
-      icon: ShieldCheck,
-      heading: 'Enterprise Governance & Tax Gateways',
-      sections: [
-        {
-          group: 'SECURITY & COMPLIANCE',
-          items: [
-            { name: 'ZATCA Phase-2 E-Invoicing Gateways', href: '#zatca' },
-            { name: 'Zero-Trust IAM Governance', href: '#iam' },
-            { name: 'Cloud Security Posture Assessment', href: '#cspm' }
-          ]
-        }
-      ]
     }
   ];
 
   return (
-    <motion.header
-      initial={{ y: 0 }}
-      animate={{ y: isVisible ? 0 : -100 }}
-      transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 w-full z-50 bg-[#0B132B] border-b border-slate-800 shadow-lg text-slate-200"
-    >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+   <motion.header
+  initial={{ y: 0 }}
+  animate={{ y: isVisible ? 0 : -100 }}
+  transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+  className="fixed top-0 left-0 w-full z-50 border-b border-[#E8E4DC] shadow-lg overflow-visible"
+>
+  {/* Same background as Enterprise Cloud Excellence section */}
+  <SiteBackground />
+
+  <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-10">
         
         {/* Logo */}
         <a href="#" className="hover:opacity-90 transition">
@@ -183,7 +166,7 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-2">
           <a 
             href="#" 
-            className="px-3.5 py-2 rounded-lg text-sm font-semibold text-white hover:text-[#5DBBE8] hover:bg-slate-800/50 transition"
+            className="px-3.5 py-2 rounded-lg text-sm font-bold text-[#0B132B] hover:text-[#5DBBE8] transition"
           >
             Home
           </a>
@@ -194,10 +177,10 @@ export default function Navbar() {
             onMouseEnter={() => setActiveDropdown('services')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold transition ${
+            <button className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-bold text-[#0B132B] transition ${
               activeDropdown === 'services' 
-                ? 'text-[#5DBBE8] bg-slate-800' 
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                ? 'text-[#0B132B]' 
+                : 'hover:text-white hover:text-[#5DBBE8] transition'
             }`}>
               Services 
               <ChevronDown 
@@ -208,7 +191,7 @@ export default function Navbar() {
               />
             </button>
 
-            {/* SOLID ENTERPRISE WHITE MEGA DROPDOWN (NO TRANSPARENCY) */}
+            {/* SOLID ENTERPRISE WHITE MEGA DROPDOWN */}
             <AnimatePresence>
               {activeDropdown === 'services' && (
                 <motion.div
@@ -218,9 +201,18 @@ export default function Navbar() {
                   transition={{ duration: 0.2, ease: 'easeOut' }}
                   className="absolute top-full left-[-160px] md:left-[-120px] mt-3.5 w-[960px] rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-slate-950/25 overflow-hidden flex z-50 text-slate-800"
                 >
-                  {/* Left Sidebar (Solid Brand Navy) */}
-                  <div className="w-[315px] p-6 bg-[#0F1D44] text-white flex flex-col justify-between border-r border-slate-800">
-                    <div>
+                  {/* Left Sidebar */}
+                  <div className="w-[315px] p-6 bg-[#0F1D44] text-white flex flex-col justify-between border-r border-slate-800 relative">
+                    {/* Grid Pattern inside Mega Menu sidebar */}
+                    <div 
+                      className="absolute inset-0 pointer-events-none opacity-[0.04]"
+                      style={{
+                        backgroundImage: `linear-gradient(to right, #5DBBE8 1px, transparent 1px), linear-gradient(to bottom, #5DBBE8 1px, transparent 1px)`,
+                        backgroundSize: '32px 32px'
+                      }}
+                    />
+
+                    <div className="relative z-10">
                       <div className="text-[10px] font-black text-[#5DBBE8] tracking-widest uppercase mb-3.5 px-2">
                         Capabilities Platform
                       </div>
@@ -252,7 +244,7 @@ export default function Navbar() {
 
                     <a
                       href="#contact"
-                      className="mt-6 flex items-center justify-between px-4 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/15 transition-all group"
+                      className="mt-6 relative z-10 flex items-center justify-between px-4 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/15 transition-all group"
                     >
                       <span className="flex items-center gap-2">
                         <Headphones size={15} className="text-[#5DBBE8]" /> Talk to an Expert
@@ -261,7 +253,7 @@ export default function Navbar() {
                     </a>
                   </div>
 
-                  {/* Right Content Area (Solid Clean White) */}
+                  {/* Right Content Area */}
                   <div className="flex-1 p-8 bg-white flex flex-col justify-between">
                     <div>
                       {/* Header */}
@@ -326,23 +318,13 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <a href="#solutions" className="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/40 transition">
-            Solutions
-          </a>
-          <a href="#cases" className="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/40 transition">
-            Case Studies
-          </a>
-          <a href="#contact" className="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/40 transition">
+          <a href="#contact" className="px-3.5 py-2 rounded-lg text-sm font-bold text-[#0B132B] hover:text-white hover:text-[#5DBBE8] transition">
             Contact Us
           </a>
         </nav>
 
         {/* Right Actions */}
         <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-[11px] font-semibold text-slate-300">
-            <span className="w-2 h-2 rounded-full bg-[#5DBBE8] animate-pulse" />
-            Oracle Cloud Partner
-          </div>
           <a
             href="#contact"
             className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#19357B] to-[#254cb3] hover:from-[#14295e] hover:to-[#19357B] text-white font-bold text-xs tracking-wider uppercase transition shadow-md shadow-[#19357B]/40 border border-blue-400/20"
@@ -362,11 +344,9 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#0B132B] border-b border-slate-800 px-6 py-4 flex flex-col gap-3 shadow-2xl">
+        <div className="lg:hidden bg-[#0B132B] border-b border-slate-800 px-6 py-4 flex flex-col gap-3 shadow-2xl relative z-10">
           <a onClick={() => setMobileOpen(false)} href="#" className="font-semibold text-slate-200 py-1">Home</a>
           <a onClick={() => setMobileOpen(false)} href="#services" className="font-semibold text-slate-200 py-1">Services</a>
-          <a onClick={() => setMobileOpen(false)} href="#solutions" className="font-semibold text-slate-200 py-1">Solutions</a>
-          <a onClick={() => setMobileOpen(false)} href="#cases" className="font-semibold text-slate-200 py-1">Case Studies</a>
           <a onClick={() => setMobileOpen(false)} href="#contact" className="font-semibold text-slate-200 py-1">Contact Us</a>
           <a
             onClick={() => setMobileOpen(false)}

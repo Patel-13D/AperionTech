@@ -6,6 +6,8 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import WhyChooseAperion from './components/WhyChooseAperion';
 import Hero from './components/Hero';
+import SiteBackground from './components/SiteBackground';
+import CardTexture from './components/CardTexture';
 import CompanyImpact from './components/CompanyImpact';
 import { 
   Cloud, 
@@ -99,53 +101,32 @@ export default function App() {
       desc: "Develop high-scale internal portals, dashboards, and automated workflows using modern full-stack frameworks and APEX/VBCS.",
       icon: Code2,
       tags: ["Oracle APEX", "Oracle VBCS", "React & Node"]
-    },
-    {
-      num: "04",
-      title: "Data Intelligence & Tuning",
-      desc: "End-to-end database architecture, Autonomous Database (ATP/ADW) tuning, data lakehouses, and real-time reporting pipelines.",
-      icon: Database,
-      tags: ["Autonomous DB", "PostgreSQL", "ETL Pipelines"]
-    },
-    {
-      num: "05",
-      title: "Agentic AI & Document Automation",
-      desc: "Eliminate manual data entry with intelligent OCR and document processing bots built directly into your finance workflows.",
-      icon: Bot,
-      tags: ["Agentic AI", "Smart Extraction", "Process Automation"]
-    },
-    {
-      num: "06",
-      title: "Cybersecurity & ZATCA Gateways",
-      desc: "Enterprise compliance, encrypted audit telemetry, and seamless Phase-2 ZATCA e-invoicing integrations.",
-      icon: ShieldCheck,
-      tags: ["SOC-2 Type II", "ZATCA Phase-2", "Zero-Trust"]
     }
   ];
 
-  const caseStudies = [
-    {
-      badge: "Compliance & Integration",
-      title: "ZATCA Phase-2 E-Invoicing Integration",
-      desc: "Integrated Oracle Fusion ERP to central tax authorities with real-time XML hashing and automated telemetry retry queues.",
-      metric: "100% Tax Compliant",
-      subMetric: "Over 650,000 monthly transactions"
-    },
-    {
-      badge: "Omnichannel Sync",
-      title: "NetSuite & Salesforce Real-Time Architecture",
-      desc: "Built 11 bi-directional sync pipelines for sales orders, live inventory allocation, pricing schedules, and customer masters.",
-      metric: "99.98% Sync Reliability",
-      subMetric: "Zero inventory discrepancies"
-    },
-    {
-      badge: "Supply Chain AI",
-      title: "Autonomous AP Document Extraction",
-      desc: "AI agent engine parsing line items, VAT numbers, and PO reconciliation across multiple regional warehouses.",
-      metric: "80% Less Manual Entry",
-      subMetric: "Under 2.5s invoice processing"
-    }
-  ];
+  // const caseStudies = [
+  //   {
+  //     badge: "Compliance & Integration",
+  //     title: "ZATCA Phase-2 E-Invoicing Integration",
+  //     desc: "Integrated Oracle Fusion ERP to central tax authorities with real-time XML hashing and automated telemetry retry queues.",
+  //     metric: "100% Tax Compliant",
+  //     subMetric: "Over 650,000 monthly transactions"
+  //   },
+  //   {
+  //     badge: "Omnichannel Sync",
+  //     title: "NetSuite & Salesforce Real-Time Architecture",
+  //     desc: "Built 11 bi-directional sync pipelines for sales orders, live inventory allocation, pricing schedules, and customer masters.",
+  //     metric: "99.98% Sync Reliability",
+  //     subMetric: "Zero inventory discrepancies"
+  //   },
+  //   {
+  //     badge: "Supply Chain AI",
+  //     title: "Autonomous AP Document Extraction",
+  //     desc: "AI agent engine parsing line items, VAT numbers, and PO reconciliation across multiple regional warehouses.",
+  //     metric: "80% Less Manual Entry",
+  //     subMetric: "Under 2.5s invoice processing"
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-white text-slate-800 selection:bg-[#8F55C1] selection:text-white antialiased">
@@ -158,7 +139,7 @@ export default function App() {
 <WhyChooseAperion />
      <CompanyImpact />
       {/* 3. ORACLE WATERMARK CUSTOMER STORIES */}
-      <CustomerStories />
+      {/* <CustomerStories /> */}
 
     {/* 4. ENTERPRISE CLOUD EXCELLENCE (WITH ORACLE REDWOOD TEXTURED CARDS) */}
       <section 
@@ -255,190 +236,137 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. PROVEN ARCHITECTURE IN PRODUCTION (CLEAN BACKGROUND) */}
-      <section id="cases" className="py-24 px-6 relative bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-8 h-[2px] bg-[#8F55C1]" />
-              <span className="text-xs font-mono font-bold tracking-widest text-[#8F55C1] uppercase">
-                Impact & Case Studies
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F1E42] tracking-tight mt-1">
-              Proven Architecture in Production
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-3 max-w-2xl">
-              Real-world deployments across Oracle Fusion Cloud, high-throughput integration middleware, and automated compliance pipelines.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {caseStudies.map((cs, i) => (
-              <motion.div
-                key={cs.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6 }}
-                className="p-8 sm:p-9 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 flex flex-col justify-between shadow-xs hover:shadow-xl hover:border-[#8F55C1]/40 transition-all duration-300 group"
-              >
-                <div>
-                  <span className="text-xs font-mono font-bold text-[#8F55C1] uppercase tracking-wider">
-                    {cs.badge}
-                  </span>
-                  <h3 className="text-xl sm:text-[22px] font-bold text-[#0F1E42] group-hover:text-[#19357B] transition-colors mt-3 mb-4 leading-snug">
-                    {cs.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-8">
-                    {cs.desc}
-                  </p>
-                </div>
-
-                <div className="pt-6 border-t border-slate-200 bg-white -mx-8 sm:-mx-9 -mb-8 sm:-mb-9 p-6 sm:p-7 rounded-b-3xl">
-                  <div className="text-xl font-black text-[#19357B]">
-                    {cs.metric}
-                  </div>
-                  <div className="text-xs font-medium text-slate-500 mt-1">
-                    {cs.subMetric}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. TESTIMONIALS & TRUST SECTION */}
-      <Testimonials />
-
       {/* 7. RFP & DISCOVERY FORM */}
-      <section id="contact" className="py-24 px-6 border-t border-slate-200 bg-[#F8FAFC]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="text-xs font-bold tracking-widest text-[#8F55C1] uppercase">Let's Connect</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F1E42] tracking-tight mt-2 leading-tight">
-              Ready to modernize your systems?
-            </h2>
-            <p className="text-slate-600 mt-6 text-base leading-relaxed">
-              Schedule an architecture discovery session with our engineering leads. We evaluate your current systems and map out a concrete integration blueprint.
-            </p>
+ <section id="contact" className="relative overflow-hidden py-24 px-6 border-t border-[#E8E4DC]">
+  <SiteBackground />
 
-            <div className="mt-8 space-y-4 text-sm text-slate-700 font-medium">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[#5DBBE8]" /> Dedicated Enterprise SLAs & 24/7 Monitoring
+  <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span className="text-xs font-bold tracking-widest text-[#8F55C1] uppercase">Let's Connect</span>
+      <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F1E42] tracking-tight mt-2 leading-tight">
+        Ready to modernize your systems?
+      </h2>
+      <p className="text-slate-600 mt-6 text-base leading-relaxed">
+        Schedule an architecture discovery session with our engineering leads. We evaluate your current systems and map out a concrete integration blueprint.
+      </p>
+
+      <div className="mt-8 space-y-4 text-sm text-slate-700 font-medium">
+        <div className="flex items-center gap-3">
+          <CheckCircle2 size={18} className="text-[#5DBBE8]" /> Dedicated Enterprise SLAs & 24/7 Monitoring
+        </div>
+        <div className="flex items-center gap-3">
+          <CheckCircle2 size={18} className="text-[#8F55C1]" /> End-to-End Encryption & Security Audits
+        </div>
+        <div className="flex items-center gap-3">
+          <CheckCircle2 size={18} className="text-[#19357B]" /> Certified Oracle & Multi-Cloud Engineers
+        </div>
+      </div>
+    </div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative overflow-hidden group p-8 rounded-3xl bg-white/95 backdrop-blur-sm border border-[#E3DDCF] shadow-2xl shadow-[#19357B]/10 hover:border-[#8F55C1]/50 transition-colors duration-300"
+    >
+      <CardTexture />
+
+      <div className="relative z-10">
+        {formStatus.submitted ? (
+          <div className="py-12 text-center">
+            <div className="w-14 h-14 mx-auto rounded-full bg-purple-50 text-[#8F55C1] flex items-center justify-center mb-4">
+              <CheckCircle2 size={32} />
+            </div>
+            <h4 className="text-2xl font-bold text-[#0F1E42]">Inquiry Received</h4>
+            <p className="text-slate-600 text-sm mt-2">
+              An Aperion Tech architect will get back to you within 24 business hours.
+            </p>
+            <button
+              onClick={() => setFormStatus({ submitted: false, loading: false })}
+              className="mt-6 px-6 py-2 rounded-lg bg-slate-100 text-xs font-semibold text-slate-800 hover:bg-slate-200"
+            >
+              Send another message
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={handleFormSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Full Name *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Jane Doe"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E3DDCF] text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
+                />
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[#8F55C1]" /> End-to-End Encryption & Security Audits
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[#19357B]" /> Certified Oracle & Multi-Cloud Engineers
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Work Email *</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="jane@company.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E3DDCF] text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
+                />
               </div>
             </div>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white border border-slate-200 shadow-2xl"
-          >
-            {formStatus.submitted ? (
-              <div className="py-12 text-center">
-                <div className="w-14 h-14 mx-auto rounded-full bg-purple-50 text-[#8F55C1] flex items-center justify-center mb-4">
-                  <CheckCircle2 size={32} />
-                </div>
-                <h4 className="text-2xl font-bold text-[#0F1E42]">Inquiry Received</h4>
-                <p className="text-slate-600 text-sm mt-2">
-                  An Aperion Tech architect will get back to you within 24 business hours.
-                </p>
-                <button
-                  onClick={() => setFormStatus({ submitted: false, loading: false })}
-                  className="mt-6 px-6 py-2 rounded-lg bg-slate-100 text-xs font-semibold text-slate-800 hover:bg-slate-200"
-                >
-                  Send another message
-                </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Company Name</label>
+                <input
+                  type="text"
+                  placeholder="Acme Enterprise"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E3DDCF] text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Jane Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">Work Email *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="jane@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">Company Name</label>
-                    <input
-                      type="text"
-                      placeholder="Acme Enterprise"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">Primary Interest</label>
-                    <select
-                      value={formData.serviceInterest}
-                      onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 focus:outline-none focus:border-[#19357B] text-sm transition"
-                    >
-                      <option>Oracle Cloud Migration (OCI)</option>
-                      <option>Enterprise Integration (OIC / APIs)</option>
-                      <option>Bespoke APEX & VBCS Apps</option>
-                      <option>Autonomous DB & Data Tuning</option>
-                      <option>ZATCA / Compliance Automation</option>
-                      <option>24/7 Managed Cloud Support</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">Project Scope *</label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Tell us about your Oracle environment, current bottlenecks, or integration requirements..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={formStatus.loading}
-                  className="w-full py-3.5 rounded-xl bg-[#19357B] hover:bg-[#0D1C44] text-white font-bold text-sm tracking-wide transition flex items-center justify-center gap-2 shadow-lg shadow-[#19357B]/20"
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Primary Interest</label>
+                <select
+                  value={formData.serviceInterest}
+                  onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E3DDCF] text-slate-800 focus:outline-none focus:border-[#19357B] text-sm transition"
                 >
-                  {formStatus.loading ? 'Transmitting Scope...' : <>Send Enterprise Inquiry <Send size={16} /></>}
-                </button>
-              </form>
-            )}
-          </motion.div>
-        </div>
-      </section>
+                  <option>Oracle Cloud Migration (OCI)</option>
+                  <option>Enterprise Integration (OIC / APIs)</option>
+                  <option>Bespoke APEX & VBCS Apps</option>
+                  <option>Autonomous DB & Data Tuning</option>
+                  <option>24/7 Managed Cloud Support</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Project Scope *</label>
+              <textarea
+                rows={4}
+                required
+                placeholder="Tell us about your Oracle environment, current bottlenecks, or integration requirements..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E3DDCF] text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#19357B] text-sm transition resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={formStatus.loading}
+              className="w-full py-3.5 rounded-xl bg-[#19357B] hover:bg-[#0D1C44] text-white font-bold text-sm tracking-wide transition flex items-center justify-center gap-2 shadow-lg shadow-[#19357B]/20"
+            >
+              {formStatus.loading ? 'Transmitting Scope...' : <>Send Enterprise Inquiry <Send size={16} /></>}
+            </button>
+          </form>
+        )}
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* 8. ORACLE REDWOOD TEXTURED BANNER & MULTI-COLUMN FOOTER */}
       <Footer />

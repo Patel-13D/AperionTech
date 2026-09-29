@@ -23,8 +23,8 @@ function Counter({ value, suffix = "+" }) {
 
 export default function CompanyImpact() {
   const stats = [
-    { num: 550, suffix: "+", label: "PROJECTS COMPLETED", sub: "Enterprise & OCI Systems" },
-    { num: 300, suffix: "+", label: "HAPPY CLIENTS", sub: "Regulated Global Entities" },
+    { num: 8, suffix: "+", label: "PROJECTS COMPLETED", sub: "Enterprise & OCI Systems" },
+    { num: 5, suffix: "+", label: "HAPPY CLIENTS", sub: "Regulated Global Entities" },
     { num: 97, suffix: "%", label: "CLIENTS RETENTION", sub: "Long-term SLAs" }
   ];
 
@@ -97,7 +97,7 @@ export default function CompanyImpact() {
             className="bg-[#0B132B] text-white rounded-2xl md:rounded-3xl p-8 sm:p-10 flex flex-col justify-between min-h-[380px] shadow-2xl shadow-black/60 border border-slate-800 -rotate-1 lg:-rotate-2 group"
           >
             <div className="text-5xl sm:text-6xl font-black text-[#5DBBE8] tracking-tight">
-              <Counter value={250} suffix="+" />
+              <Counter value={15} suffix="+" />
             </div>
             <div className="pt-8 border-t border-slate-800">
               <div className="text-sm sm:text-base font-extrabold text-white tracking-wider leading-snug">

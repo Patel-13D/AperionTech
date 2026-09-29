@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SiteBackground from './SiteBackground';
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -17,8 +18,7 @@ export default function Hero() {
   const nodes = [
     { name: "Oracle Fusion ERP", tag: "Cloud Financials", state: "Live Sync" },
     { name: "OIC Middleware Hub", tag: "Enterprise REST & SOAP", state: "8ms Latency" },
-    { name: "Autonomous Database", tag: "ATP / ADW Auto-Scale", state: "Zero Data Loss" },
-    { name: "ZATCA Phase-2 Gateway", tag: "Automated Tax Telemetry", state: "100% Verified" }
+    { name: "Autonomous Database", tag: "ATP / ADW Auto-Scale", state: "Zero Data Loss" }
   ];
 
   useEffect(() => {
@@ -29,28 +29,14 @@ export default function Hero() {
   }, [nodes.length]);
 
   return (
-    <section className="relative pt-36 pb-20 md:pt-40 md:pb-24 px-6 bg-[#FAF8F5] text-[#1E1C1A] overflow-hidden border-b border-[#E8E4DC]">
-      
-      {/* 1. Organic Redwood Wave Contour Texture */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.08] mix-blend-multiply"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cpath d='M-100,200 C150,120 350,280 900,160 M-100,280 C200,200 400,340 900,240 M-100,360 C180,310 420,420 900,320 M-100,440 C220,390 450,500 900,400 M-100,520 C190,490 430,580 900,480 M-100,600 C210,570 460,660 900,560' fill='none' stroke='%23382F2D' stroke-width='1.5'/%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '700px 700px'
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+   <section className="relative py-24 px-6">
+  <SiteBackground />
+  <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* LEFT: Crisp, Meaningful Executive Pitch */}
           <div className="lg:col-span-6 text-left">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFEBE3] border border-[#DDD7CD] text-[#2C2926] text-xs font-mono font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#19357B] animate-pulse" />
-              Oracle Partner • Enterprise Cloud Delivery
-            </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#161513] leading-[1.12]">
               Mission-critical <br />
@@ -172,12 +158,7 @@ export default function Hero() {
               </div>
 
               {/* Architecture Telemetry Footer */}
-              <div className="mt-6 pt-4 border-t border-[#EFEBE3] flex items-center justify-between text-xs text-[#7A746B]">
-                <span className="flex items-center gap-1.5 font-medium">
-                  <CheckCircle2 size={14} className="text-[#19357B]" /> SOC-2 Type II & ZATCA Compliant
-                </span>
-                <span className="font-mono text-[11px]">SLA: 99.99%</span>
-              </div>
+             
 
             </div>
           </div>

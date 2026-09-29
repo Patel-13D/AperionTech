@@ -12,7 +12,7 @@ export default function AperionLogo({ className = "h-11", isWhite = false }) {
 
       {/* Brand Typography */}
       <div className="flex flex-col leading-none">
-        <span className={`text-xl font-black tracking-tight ${isWhite ? 'text-white' : 'text-[#19357B]'}`}>
+        <span className={`text-xl font-black tracking-tight ${isWhite ? 'text-[#0B132B]' : 'text-[#19357B]'}`}>
           Aperion Tech
         </span>
         <span className={`text-[10px] font-bold tracking-wider uppercase mt-1 ${isWhite ? 'text-[#5DBBE8]' : 'text-[#8F55C1]'}`}>

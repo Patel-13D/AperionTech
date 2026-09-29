@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Trophy, ShieldCheck, Zap, Clock, CheckCircle2 } from 'lucide-react';
-
+import SiteBackground from './SiteBackground';
+import CardTexture from './CardTexture';
 export default function WhyChooseAperion() {
   const targetRef = useRef(null);
 
@@ -32,17 +33,6 @@ export default function WhyChooseAperion() {
     },
     {
       id: "02",
-      title: "Security & Trust",
-      icon: ShieldCheck,
-      points: [
-        "Strict non-disclosure & regulatory confidentiality",
-        "ZATCA Phase-2 cryptographic tax compliance",
-        "Zero-trust IAM and encrypted vault architecture",
-        "SOC-2 Type II audit telemetry & tamper-proof logs"
-      ]
-    },
-    {
-      id: "03",
       title: "Agile Engineering",
       icon: Zap,
       points: [
@@ -51,35 +41,25 @@ export default function WhyChooseAperion() {
         "Automated deployment rollbacks & disaster protection",
         "Direct escalation channels with certified leads"
       ]
-    },
-    {
-      id: "04",
-      title: "Cost & Time Optimization",
-      icon: Clock,
-      points: [
-        "Up to 40% reduction in cloud over-provisioning waste",
-        "Autonomous DB query indexation & memory tuning",
-        "Guaranteed 99.99% RTO/RPO multi-region recovery",
-        "Predictable milestone-driven enterprise pricing"
-      ]
     }
   ];
 
   return (
     // Black background with 320vh height
-    <section ref={targetRef} className="relative h-[320vh] bg-[#050505] text-white">
+    <section ref={targetRef} className="relative h-[320vh] border-[#E8E4DC]">
       {/* Sticky viewport lock */}
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        
+        <SiteBackground />
         {/* Section Header */}
-        <div className="max-w-7xl mx-auto px-6 w-full mb-10">
+       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full mb-10">
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-8 h-[2px] bg-white" />
-            <span className="text-xs font-mono font-bold tracking-widest text-slate-400 uppercase">
-              Value Engineering
-            </span>
+            {/* Eyebrow line: white tha, cream par gayab ho jata */}
+<span className="w-8 h-[2px] bg-[#8F55C1]" />
+<span className="text-xs font-mono font-bold tracking-widest text-slate-500 uppercase">
+  Value Engineering
+</span>
           </div>
-          <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tight">
+          <h2 className="text-4xl sm:text-6xl font-black text-black tracking-tight">
             Why choose{' '}
             <span className="bg-gradient-to-r from-[#5DBBE8] via-[#8F55C1] to-[#5DBBE8] bg-clip-text text-transparent drop-shadow-xs">
               Aperion Tech?
@@ -88,15 +68,16 @@ export default function WhyChooseAperion() {
         </div>
 
         {/* Horizontal Track for Extra Large White Cards */}
-        <div className="w-full pl-6 md:pl-20">
+      <div className="relative z-10 w-full pl-6 md:pl-20">
           <motion.div style={{ x }} className="flex gap-10 w-max pr-24">
             {features.map((item) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.id}
-                  className="w-[88vw] sm:w-[700px] lg:w-[860px] min-h-[460px] rounded-[32px] bg-white text-slate-900 p-10 sm:p-16 shadow-2xl shadow-black/80 border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-10 shrink-0 relative overflow-hidden group hover:border-slate-400 transition-colors duration-300"
+                  className="w-[88vw] sm:w-[700px] lg:w-[860px] min-h-[460px] rounded-[32px] relative overflow-hidden group bg-white text-slate-900 p-10 sm:p-16 shadow-2xl shadow-[#19357B]/15 border border-[#E3DDCF] flex flex-col md:flex-row items-start md:items-center justify-between gap-10 shrink-0 relative overflow-hidden group hover:border-slate-400 transition-colors duration-300"
                 >
+                  <CardTexture />
                   {/* Left Column: Animated Icon & Title */}
                   <div className="md:w-5/12 flex flex-col items-start relative z-10">
                     
@@ -138,8 +119,8 @@ export default function WhyChooseAperion() {
         </div>
 
         {/* Minimalist Scroll Progress Bar */}
-        <div className="max-w-7xl mx-auto px-6 w-full mt-10">
-          <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full mt-10">
+          <div className="w-full h-1 bg-[#19357B]/10 rounded-full overflow-hidden">
             <motion.div 
               style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
               className="h-full bg-gradient-to-r from-[#5DBBE8] via-[#8F55C1] to-[#5DBBE8]"
